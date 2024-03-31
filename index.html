@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car</title>
+  <link rel="stylesheet" href="./main.css">
+  <link rel="stylesheet" href="./typeit.css">
+  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+  <style>
+    .example1 {
+      padding: 5px 30px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="overplay">
+    <p class="example1"></p>
+    <button id="startButton">Play</button>
+  </div>
+  <div id="loading">
+    <div id="he">
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+  </div>
+  <!-- 游戏内设置问题 -->
+  <!-- 总体窗口 -->
+  <div id="gameMenu">
+    <h1 style="text-decoration: underline;">Game-Menu</h1>
+    <h5>汽车牵引力(100-300)默认200</h5>
+    <input type="range" id="_" min="100" max="200" step="1"/>
+    <h5>摄像头移动速度</h5>
+    <input type="range" id="__" min="0" max="1" step="0.01"/>
+    <h5>待定</h5>
+    <input type="range" id="___" min="0" max="1" step="0.01"/>
+    <h5>待定</h5>
+    <input type="range" id="____" min="0" max="1" step="0.01"/>
+    <h5>待定</h5>
+    <input type="range" id="_____" min="0" max="1" step="0.01"/>
+    <button><h5>自由摄像</h5></button>
+  </div>
+  <div>
+  <img src="./CameraControl.png" alt="" class="leisile" id="leisile_">
+  <img src="./CarControl.png" alt="" class="leisile" id="leisile__">
+</body>
+<script src="./three.min.js"></script>
+<script type="module">
+  import WebGL from './WebGL.js';
+  if (WebGL.isWebGLAvailable()) {
+  } else {
+    alert("Your web never support Webgl!")
+    const warning = WebGL.getWebGLErrorMessage();
+    document.getElementById('container').appendChild(warning);
+  }
+</script>
+<script src="./GLTFLoader.js"></script>
+<script src="./RGBELoader.js"></script>
+<script src="./tween.umd.js"></script>
+<script src="./index.js" type="module"></script>
+</html>
